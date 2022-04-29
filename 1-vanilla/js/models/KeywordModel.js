@@ -1,3 +1,4 @@
+// 추천 키워드 관리 모델
 export default {
   data: [
     {keyword: '이탈리아'}, 
