@@ -1,3 +1,4 @@
+// 검색에 대한 데이터를 관리하는 모델
 export default {
   data: [
     { keyword: '검색기록2', date: '12.03' },
@@ -5,6 +6,7 @@ export default {
     { keyword: '검색기록0', date: '12.01' },
   ],
 
+  // Promise 활용하여 비동기로 구현, 데이터 리턴 기능
   list() {
     return Promise.resolve(this.data)
   },

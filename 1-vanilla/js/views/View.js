@@ -7,6 +7,10 @@ export default {
     return this
   },
 
+  /* on, emit은 함께 다님
+  1. on : 이벤트 정의
+  2. emit : 이벤트 방출(el에 이벤트 부여)
+  */  
   on(event, handler) {
     this.el.addEventListener(event, handler)
     return this
