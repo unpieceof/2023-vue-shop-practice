@@ -9,7 +9,7 @@ FormView.setup = function (el) {
     this.init(el)
     this.inputEl = el.querySelector('[type=text]')
     this.resetEl = el.querySelector('[type=reset]')
-    this.showResetBtn(False) // Reset 속성은 숨김 처리
+    this.showResetBtn(false) // Reset 속성은 숨김 처리, true/false는 대소문자 가림
 }
 
 FormView.showResetBtn = function(show = true) {

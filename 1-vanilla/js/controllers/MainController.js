@@ -1,4 +1,4 @@
-import FormView from "../views/FormView"
+import FormView from "../views/FormView.js"
 
 const tag = '[MainController]'
 
