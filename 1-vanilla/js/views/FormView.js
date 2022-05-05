@@ -11,6 +11,7 @@ FormView.setup = function (el) {
     this.resetEl = el.querySelector('[type=reset]')
     this.showResetBtn(false) // Reset 속성은 숨김 처리, true/false는 대소문자 가림
     this.bindEvents()
+    this.return
 }
 
 FormView.showResetBtn = function(show = true) {
