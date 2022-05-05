@@ -22,8 +22,13 @@ FormView.bindEvents = function() {
     this.inputEl.addEventListener('keyup', e => this.onKeyup(e))
 }
 
+// 키 입력 부분
 FormView.onKeyup = function() {
+    const enter = 13
     this.showResetBtn(this.inputEl.value.length)
+    if(e.keyCode !== enter) return
+    // FormView에서 입력한 값 전달(-> resultView)
+    this.emit('@submit',{input: this.inputEl.value})
 }
 
 // Controller에서 사용하기 위해 export 필요
