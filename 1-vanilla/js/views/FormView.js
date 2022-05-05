@@ -20,6 +20,7 @@ FormView.showResetBtn = function(show = true) {
 
 // 검색어 입력 시 x 버튼 보이도록 하는 이벤트 매핑
 FormView.bindEvents = function() {
+    this.on('submit', e => e.preventDefault())
     this.inputEl.addEventListener('keyup', e => this.onKeyup(e))
 }
 
