@@ -22,6 +22,7 @@ FormView.showResetBtn = function(show = true) {
 FormView.bindEvents = function() {
     this.on('submit', e => e.preventDefault())
     this.inputEl.addEventListener('keyup', e => this.onKeyup(e))
+    this.resetEl.addEventListener('click', e => this.onClickReset())
 }
 
 // 키 입력 부분
@@ -31,6 +32,11 @@ FormView.onKeyup = function(e) {
     if(e.keyCode !== enter) return
     // FormView에서 입력한 값 전달(-> resultView)
     this.emit('@submit', {input: this.inputEl.value})
+}
+
+FormView.onClickReset = function() {
+    this.emit('@reset')
+    this.showResetBtn(false)
 }
 
 // Controller에서 사용하기 위해 export 필요
