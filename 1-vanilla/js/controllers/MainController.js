@@ -12,11 +12,22 @@ export default{
         ResultView.setup(document.querySelector('#search-result'))
     },
 
+    search(query) {
+        console.log(tag, 'search()', query)
+        //search api
+        this.onSearchResult([]) //data 받아서 넘겨 줌
+    },
+
     onSubmit(input) {
         console.log(tag, 'onSubmit()', input)
+        this.search(input)
     },
 
     onResetForm() {
         console.log(tag, 'onResetForm()')
+    },
+
+    onSearchResult(data) {
+        ResultView.render(data)
     }
 }
