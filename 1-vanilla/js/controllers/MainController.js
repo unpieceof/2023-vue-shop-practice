@@ -1,5 +1,6 @@
 import FormView from "../views/FormView.js"
 import ResultView from "../views/ResultView.js"
+import SearchModel from "../models/SearchModel.js"
 
 const tag = '[MainController]'
 
@@ -14,8 +15,9 @@ export default{
 
     search(query) {
         console.log(tag, 'search()', query)
-        //search api
-        this.onSearchResult([]) //data 받아서 넘겨 줌
+        SearchModel.list(query).then(data => {
+            this.onSearchResult(data)
+        })
     },
 
     onSubmit(input) {
