@@ -6,6 +6,8 @@ const TabView = Object.create(View)
 
 TabView.setup = function(el) {
     this.init(el)
+    this.bindClick()
+    return this
 }
 
 TabView.setActiveTab = function(tabName) {
@@ -13,6 +15,17 @@ TabView.setActiveTab = function(tabName) {
     Array.from(this.el.querySelectorAll('li')).forEach(li => {
         li.className = li.innerHTML === tabName ? 'active' : '' // TabName이 같은 경우에만 class에 active 추가
     } )
+}
+
+TabView.bindClick = function() {
+    Array.from(this.el.querySelectorAll('li')).forEach(li => {
+        li.addEventListener('click', e => this.onClick(li.innerHTML))
+    })
+}
+
+TabView.onClick = function(tabName){
+    this.setActiveTab(tabName)
+    this.emit('@change', {tabName})
 }
 
 export default TabView
