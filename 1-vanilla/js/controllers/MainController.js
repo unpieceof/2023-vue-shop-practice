@@ -14,6 +14,7 @@ export default{
         ResultView.setup(document.querySelector('#search-result'))
 
         TabView.setup(document.querySelector('#tabs'))
+            .on('@change', e => this.onChangeTab(e.detail.tabName))
 
         this.selectedTab = '추천 검색어'
         this.renderView()
@@ -45,5 +46,9 @@ export default{
 
     onSearchResult(data) {
         ResultView.render(data)
+    },
+
+    onChangeTab(tabName) {
+        debugger
     }
 }
