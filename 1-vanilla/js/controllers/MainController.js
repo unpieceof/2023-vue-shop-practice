@@ -30,9 +30,7 @@ export default{
         TabView.setActiveTab(this.selectedTab)
 
         if(this.selectedTab === '추천 검색어'){
-            KeywordModel.list().then(data => {
-                KeywordView.render(data)
-            })
+            this.fetchSearchKeyword()
         } else{
             debugger
         }
@@ -40,6 +38,12 @@ export default{
         ResultView.hide()
     },
 
+    fetchSearchKeyword() {
+        KeywordModel.list().then(data => {
+            KeywordView.render(data)
+        })
+    },
+    
     search(query) {
         console.log(tag, 'search()', query)
         SearchModel.list(query).then(data => {
