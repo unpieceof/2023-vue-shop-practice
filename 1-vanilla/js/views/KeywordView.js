@@ -15,6 +15,7 @@ KeywordView.render = function(data = []) {
 
 KeywordView.getKeywordsHtml = function(data) {
     return data.reduce((html, item, index) => {
+        // ' 쓰면 에러 남! `로 써야 에러 안 남!
         html += `<li> 
             <span class = "number">${index + 1}</span>
             ${item.keyword}
