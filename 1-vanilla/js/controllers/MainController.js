@@ -1,6 +1,8 @@
 import FormView from "../views/FormView.js"
 import ResultView from "../views/ResultView.js"
 import SearchModel from "../models/SearchModel.js"
+import KeywordModel from "../models/KeywordModel.js"
+
 import TabView from "../views/TabView.js"
 import KeywordView from "../views/KeywordView.js"
 
@@ -26,6 +28,15 @@ export default{
     renderView(){
         console.log(tag, 'renderView()')
         TabView.setActiveTab(this.selectedTab)
+
+        if(this.selectedTab === '추천 검색어'){
+            KeywordModel.list().then(data => {
+                KeywordView.render(data)
+            })
+        } else{
+
+        }
+
         ResultView.hide()
     },
 
