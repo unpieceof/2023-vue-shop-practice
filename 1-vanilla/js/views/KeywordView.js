@@ -14,7 +14,13 @@ KeywordView.render = function(data = []) {
 }
 
 KeywordView.getKeywordsHtml = function(data) {
-    debugger
+    return data.reduce((html, item, index) => {
+        html += `<li> 
+            <span class = "number">${index + 1}</span>
+            ${item.keyword}
+        </li>`
+        return html
+    }, '<ul class = "list">') + '</ul>'
 }
 
 export default KeywordView

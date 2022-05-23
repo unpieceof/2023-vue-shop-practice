@@ -34,7 +34,7 @@ export default{
                 KeywordView.render(data)
             })
         } else{
-
+            debugger
         }
 
         ResultView.hide()
