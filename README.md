@@ -1,6 +1,9 @@
 # vue-shop-practice
 MVC(Vanilla) - MVVM(Vue.js) - Component 개념을 쇼핑몰 구현을 통해 학습하는 프로젝트 
 
+![image](https://github.com/unpieceof/2023-vue-shop-practice/assets/101758997/ddc30483-029c-4c60-81a6-5324572ce707)
+
+
 ## 요구사항 분석
 ### 검색폼 구현
 - [X] 검색 상품명 입력 폼이 위치한다. 
